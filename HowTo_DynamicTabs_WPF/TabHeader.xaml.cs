@@ -7,7 +7,7 @@ namespace HowTo_DynamicTabs_WPF;
 /// </summary>
 public partial class TabHeader : UserControl
 {
-    public event EventHandler<int> TabCloseClicked;
+    public event EventHandler<TabItem> TabCloseClicked;
     int _index;
 
     public TabHeader()
@@ -23,6 +23,7 @@ public partial class TabHeader : UserControl
 
     private void button_close_Click(object sender, RoutedEventArgs e)
     {
-        TabCloseClicked?.Invoke(this, _index);
+        var parentTabItem = ((TabItem)(this).Parent);
+        TabCloseClicked?.Invoke(this, parentTabItem);
     }
 }
