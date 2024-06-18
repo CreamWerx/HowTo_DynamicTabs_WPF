@@ -15,7 +15,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBox x:Name="tbInput" Width="150" Text="hff"/>
+            <TextBox x:Name="tbInput" Width="150" />
             <Button Click="Button_Click" Content="Add" />
         </StackPanel>
         <TabControl

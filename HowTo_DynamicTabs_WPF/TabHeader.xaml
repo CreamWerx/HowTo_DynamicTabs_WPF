@@ -15,13 +15,13 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button
-            Background="White"
             Grid.Column="2"
             Width="20"
             Height="19"
             Margin="0,3,4,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Background="White"
             Click="button_close_Click"
             Content="X"
             FontFamily="Courier"
@@ -29,7 +29,7 @@
             FontStretch="Normal"
             FontWeight="Bold" />
         <Label
-            x:Name="NameLabel"
+            x:Name="TabLabel"
             Grid.ColumnSpan="2"
             Height="23"
             Margin="4,1,0,0"

@@ -2,28 +2,29 @@
 using System.Windows.Controls;
 
 namespace HowTo_DynamicTabs_WPF;
-/// <summary>
-/// Interaction logic for TabHeader.xaml
-/// </summary>
 public partial class TabHeader : UserControl
 {
-    public event EventHandler<TabItem> TabCloseClicked;
-    int _index;
-
+    // Event used to indicate to MainWindow that user requested tab be closed
+    public event EventHandler<TabItem>? TabCloseClicked;
+    
+    // Constructor required for designer
     public TabHeader()
     {
         InitializeComponent();
     }
-    public TabHeader(int index, string headerName)
+
+    // Constructor required for dynamic creation
+    public TabHeader(string headerName)
     {
         InitializeComponent();
-        _index = index;
-        NameLabel.Content = headerName;
+        TabLabel.Content = headerName;
     }
 
     private void button_close_Click(object sender, RoutedEventArgs e)
     {
-        var parentTabItem = ((TabItem)(this).Parent);
+        // Get a reference to the tab item containing the clicked button
+        //  and invoke event
+        var parentTabItem = (TabItem)Parent;
         TabCloseClicked?.Invoke(this, parentTabItem);
     }
 }
